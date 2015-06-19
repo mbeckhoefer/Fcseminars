@@ -39,3 +39,36 @@ $GLOBALS['TCA']['tx_fcseminars_domain_model_fcseminars'] = array(
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_fcseminars_domain_model_fcseminars.gif'
 	),
 );
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+	'tx_seminars_seminars',
+	array(
+		'more' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:fcseminars/Resources/Private/Language/locallang_db.xlf:tx_seminars_seminars.more',
+			'config' => array(
+				'type' => 'input',
+				'size' => '20',
+				'max' => '255',
+				'eval' => 'trim',
+			),
+		),
+		'steckbrief' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:fcseminars/Resources/Private/Language/locallang_db.xlf:tx_seminars_seminars.steckbrief',
+			'config' => array(
+				'type' => 'text',
+				'size' => '20',
+				'max' => '255',
+				'eval' => 'trim',
+			),
+		),
+	)
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+	'tx_seminars_seminars',
+	'--div--;LLL:EXT:fcseminars/Resources/Private/Language/locallang_db.xlf:tab.fcseminars,' .
+	'more,' .
+	'steckbrief;;;richtext[paste|bold|italic|formatblock|class|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image]:rte_transform[mode=ts_css]'
+);

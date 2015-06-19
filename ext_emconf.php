@@ -20,11 +20,12 @@ $EM_CONF[$_EXTKEY] = array(
 	'internal' => '',
 	'uploadfolder' => '0',
 	'createDirs' => '',
+	'modify_tables' => 'tx_seminars_seminars',
 	'clearCacheOnLoad' => 0,
 	'version' => '1000',
 	'constraints' => array(
 		'depends' => array(
-			'typo3' => '6.2',
+			'typo3' => '6.2.0-6.2.99',
 		),
 		'conflicts' => array(
 		),

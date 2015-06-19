@@ -1,8 +1,15 @@
 #
+# Table structure for table 'tx_seminars_seminars'
+#
+CREATE TABLE tx_seminars_seminars (
+	more tinytext,
+	steckbrief text
+}
+
+#
 # Table structure for table 'tx_fcseminars_domain_model_fcseminars'
 #
 CREATE TABLE tx_fcseminars_domain_model_fcseminars (
-
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
@@ -38,6 +45,5 @@ CREATE TABLE tx_fcseminars_domain_model_fcseminars (
 	PRIMARY KEY (uid),
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
- KEY language (l10n_parent,sys_language_uid)
-
+	KEY language (l10n_parent,sys_language_uid)
 );
