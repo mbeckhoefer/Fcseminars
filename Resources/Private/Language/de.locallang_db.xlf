@@ -21,9 +21,17 @@
 			<trans-unit id="tx_fcseminars_domain_model_fcseminars.zusatzfeld3">
 				<source>Zusatzfeld3</source>
 			</trans-unit>
-			<trans-unit id="tab.fcseminars">
-				<source>FC Seminars</source>
-				<target>FC-Seminars</target>
+			<trans-unit id="tx_seminars_seminars.tab.data1">
+				<source>Data 1</source>
+				<target>Daten 1</target>
+			</trans-unit>
+			<trans-unit id="tx_seminars_seminars.tab.data2">
+				<source>Data 2</source>
+				<target>Daten 2</target>
+			</trans-unit>
+			<trans-unit id="tx_seminars_seminars.tab.images">
+				<source>Images</source>
+				<target>Bilder</target>
 			</trans-unit>
 			<trans-unit id="tx_seminars_seminars.more">
 				<source>More Highlights:</source>
