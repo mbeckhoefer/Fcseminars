@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2015-05-18T12:26:23Z" product-name="fcseminars">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-05-18T12:26:23Z" product-name="fcseminars">
 		<header/>
 		<body>
 			<trans-unit id="tx_fcseminars_domain_model_fcseminars">
@@ -23,12 +23,15 @@
 			</trans-unit>
 			<trans-unit id="tab.fcseminars">
 				<source>FC Seminars</source>
+				<target>FC-Seminars</target>
 			</trans-unit>
 			<trans-unit id="tx_seminars_seminars.more">
 				<source>More Highlights:</source>
+				<target>Bitte für Highlights mehr eintragen:</target>
 			</trans-unit>
 			<trans-unit id="tx_seminars_seminars.steckbrief">
 				<source>Link to the summary:</source>
+				<target>Link zum Steckbrief:</target>
 			</trans-unit>
 		</body>
 	</file>
