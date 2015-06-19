@@ -66,9 +66,15 @@ $GLOBALS['TCA']['tx_fcseminars_domain_model_fcseminars'] = array(
 	)
 );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
-	'tx_seminars_seminars',
-	'--div--;LLL:EXT:fcseminars/Resources/Private/Language/locallang_db.xlf:tab.fcseminars,' .
-	'more,' .
-	'steckbrief;;;richtext[paste|bold|italic|formatblock|class|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image]:rte_transform[mode=ts_css]'
-);
+unset($GLOBALS['TCA']['tx_seminars_seminars']['columns']['object_type']);
+$GLOBALS['TCA']['tx_seminars_seminars']['columns']['title']['config']['type'] = 'text';
+$GLOBALS['TCA']['tx_seminars_seminars']['columns']['accreditation_number']['config']['type'] = 'text';
+$GLOBALS['TCA']['tx_seminars_seminars']['columns']['credit_points']['config']['size'] = 20;
+$GLOBALS['TCA']['tx_seminars_seminars']['types']['0']['showitem'] = '--div--;LLL:EXT:fcseminars/Resources/Private/Language/locallang_db.xlf:tx_seminars_seminars.tab.data1, begin_date, end_date,
+title;;;richtext[paste|bold|italic|formatblock|class|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image]:rte_transform[mode=ts_css],
+description;;;richtext[paste|bold|italic|formatblock|class|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image]:rte_transform[mode=ts_css],
+teaser;;;richtext[paste|bold|italic|formatblock|class|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image]:rte_transform[mode=ts_css],
+uses_terms_2,notes,more,steckbrief;;;richtext[paste|bold|italic|formatblock|class|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image]:rte_transform[mode=ts_css],'.
+	'--div--;LLL:EXT:fcseminars/Resources/Private/Language/locallang_db.xlf:tx_seminars_seminars.tab.data2,  additional_information,place, room,target_groups, organizers,categories,event_type, subtitle;;;;3-3-3,accreditation_number;;;richtext[paste|bold|italic|formatblock|class|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image]:rte_transform[mode=ts_css],'.
+	'--div--;LLL:EXT:fcseminars/Resources/Private/Language/locallang_db.xlf:tx_seminars_seminars.tab.images, image, attached_files,'.
+	'--div--;LLL:EXT:seminars/locallang_db.xml:tx_seminars_seminars.divLabelAccess, hidden;;1;;1-1-1, owner_feuser, vips';
