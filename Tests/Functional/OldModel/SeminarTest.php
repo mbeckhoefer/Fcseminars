@@ -120,4 +120,32 @@ class SeminarTest extends \Tx_Phpunit_TestCase {
 			$subject->hasSteckbrief()
 		);
 	}
+
+	/**
+	 * @test
+	 */
+	public function getEventDataWithMoreReturnsMoreData() {
+		$more = 'some more text';
+		$uid = $this->testingFramework->createRecord('tx_seminars_seminars', array('more' => $more));
+		$subject = new Seminar($uid);
+
+		self::assertSame(
+			$more,
+			$subject->getEventData('more')
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getEventDataWithSteckbriefReturnsSteckbriefData() {
+		$steckbrief = 'some steckbrief text';
+		$uid = $this->testingFramework->createRecord('tx_seminars_seminars', array('steckbrief' => $steckbrief));
+		$subject = new Seminar($uid);
+
+		self::assertSame(
+			$steckbrief,
+			$subject->getEventData('steckbrief')
+		);
+	}
 }

@@ -55,4 +55,34 @@ class Seminar extends \tx_seminars_seminar {
 	public function hasSteckbrief() {
 		return $this->hasRecordPropertyString('steckbrief');
 	}
+
+	/**
+	 * Retrieves a value from this record. The return value will be an empty
+	 * string if the key is not defined in $this->recordData or if it has not
+	 * been filled in.
+	 *
+	 * If the data needs to be decoded to be readable (eg. the speakers
+	 * payment or the gender), this function will already return the clear text
+	 * version.
+	 *
+	 * @param string $key the key of the data to retrieve (the key doesn't need to be trimmed)
+	 *
+	 * @return string the data retrieved from $this->recordData, may be empty
+	 */
+	public function getEventData($key) {
+		$trimmedKey = trim($key);
+
+		switch ($trimmedKey) {
+			case 'more':
+				$result = $this->getMore();
+				break;
+			case 'steckbrief':
+				$result = $this->getSteckbrief();
+				break;
+			default:
+				$result = parent::getEventData($key);
+		}
+
+		return $result;
+	}
 }
