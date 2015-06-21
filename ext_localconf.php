@@ -18,3 +18,6 @@ if (!defined('TYPO3_MODE')) {
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['tx_seminars_seminar'] = array(
 	'className' => 'Fcseminars\\Fcseminars\\OldModel\\Seminar',
 );
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['tx_seminars_Model_Event'] = array(
+	'className' => 'Fcseminars\\Fcseminars\\Model\\Event',
+);

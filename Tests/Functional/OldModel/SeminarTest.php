@@ -1,5 +1,5 @@
 <?php
-namespace Fcseminars\Fcseminars\Tests\FunctionalOldModel\Seminar;
+namespace Fcseminars\Fcseminars\Tests\Functional\OldModel;
 
 /*
  * This file is part of the TYPO3 CMS project.
