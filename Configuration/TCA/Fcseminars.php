@@ -1,7 +1,5 @@
 <?php
-if (!defined ('TYPO3_MODE')) {
-	die ('Access denied.');
-}
+defined('TYPO3_MODE') or die('Access denied.');
 
 $GLOBALS['TCA']['tx_fcseminars_domain_model_fcseminars'] = array(
 	'ctrl' => $GLOBALS['TCA']['tx_fcseminars_domain_model_fcseminars']['ctrl'],
@@ -15,7 +13,6 @@ $GLOBALS['TCA']['tx_fcseminars_domain_model_fcseminars'] = array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
-	
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -47,7 +44,6 @@ $GLOBALS['TCA']['tx_fcseminars_domain_model_fcseminars'] = array(
 				'type' => 'passthrough',
 			),
 		),
-
 		't3ver_label' => array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
 			'config' => array(
@@ -56,7 +52,6 @@ $GLOBALS['TCA']['tx_fcseminars_domain_model_fcseminars'] = array(
 				'max' => 255,
 			)
 		),
-	
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -96,7 +91,6 @@ $GLOBALS['TCA']['tx_fcseminars_domain_model_fcseminars'] = array(
 				),
 			),
 		),
-
 		'steckbrief' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:fcseminars/Resources/Private/Language/locallang_db.xlf:tx_fcseminars_domain_model_fcseminars.steckbrief',
@@ -153,7 +147,5 @@ $GLOBALS['TCA']['tx_fcseminars_domain_model_fcseminars'] = array(
 				'eval' => 'trim'
 			),
 		),
-		
 	),
 );
-
