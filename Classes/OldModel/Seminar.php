@@ -85,4 +85,20 @@ class Seminar extends \tx_seminars_seminar {
 
 		return $result;
 	}
+
+	/**
+	 * Gets the time.
+	 *
+	 * Returns the string "mehrtägig" if there's no time set
+	 * (i.e. both begin time and end time are 00:00).
+	 *
+	 * Returns only the begin time if begin time and end time are the same.
+	 *
+	 * @param string $dash the character or HTML entity used to separate begin time and end time
+	 *
+	 * @return string the time
+	 */
+	public function getTime($dash = '&#8211;') {
+		return $this->hasTime() ? parent::getTime($dash) : 'mehrtägig';
+	}
 }
