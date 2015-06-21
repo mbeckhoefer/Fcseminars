@@ -120,4 +120,61 @@ class SeminarTest extends \Tx_Phpunit_TestCase {
 			$subject->hasSteckbrief()
 		);
 	}
+
+	/**
+	 * @test
+	 */
+	public function getEventDataWithMoreReturnsMoreData() {
+		$more = 'some more text';
+		$uid = $this->testingFramework->createRecord('tx_seminars_seminars', array('more' => $more));
+		$subject = new Seminar($uid);
+
+		self::assertSame(
+			$more,
+			$subject->getEventData('more')
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getEventDataWithSteckbriefReturnsSteckbriefData() {
+		$steckbrief = 'some steckbrief text';
+		$uid = $this->testingFramework->createRecord('tx_seminars_seminars', array('steckbrief' => $steckbrief));
+		$subject = new Seminar($uid);
+
+		self::assertSame(
+			$steckbrief,
+			$subject->getEventData('steckbrief')
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getTimeForBeginTimeReturnsBeginTime() {
+		$beginDateAndTime = mktime(9, 50, 0, 4, 2, 1975);
+		$uid = $this->testingFramework->createRecord('tx_seminars_seminars', array('begin_date' => $beginDateAndTime));
+		$subject = new Seminar($uid);
+		$subject->setConfigurationValue('timeFormat', '%H:%M');
+
+		self::assertSame(
+			'09:50 ' . $subject->translate('label_hourse'),
+			$subject->getTime()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getTimeForNoBeginTimeReturnsLabel() {
+		$uid = $this->testingFramework->createRecord('tx_seminars_seminars', array());
+		$subject = new Seminar($uid);
+		$subject->setConfigurationValue('timeFormat', '%H:%M');
+
+		self::assertSame(
+			'mehrtägig',
+			$subject->getTime()
+		);
+	}
 }
