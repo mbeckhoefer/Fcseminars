@@ -10,5 +10,8 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['tx_seminars_seminar'] = array(
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['tx_seminars_Model_Event'] = array(
 	'className' => 'Fcseminars\\Fcseminars\\Model\\Event',
 );
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['tx_seminars_FrontEnd_CategoryList'] = array(
+	'className' => 'Fcseminars\\Fcseminars\\View\\CategoryList',
+);
 
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['seminars']['listView'][] = 'Fcseminars\\Fcseminars\\Hooks\\SeminarListView';
