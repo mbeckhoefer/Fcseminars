@@ -28,6 +28,7 @@ defined('TYPO3_MODE') or die('Access denied.');
 );
 
 unset($GLOBALS['TCA']['tx_seminars_seminars']['columns']['object_type']);
+$GLOBALS['TCA']['tx_seminars_seminars']['ctrl']['default_sortby'] = 'ORDER BY crdate DESC';
 $GLOBALS['TCA']['tx_seminars_seminars']['columns']['title']['config']['type'] = 'text';
 $GLOBALS['TCA']['tx_seminars_seminars']['columns']['accreditation_number']['config']['type'] = 'text';
 $GLOBALS['TCA']['tx_seminars_seminars']['columns']['credit_points']['config']['size'] = 20;
