@@ -32,6 +32,7 @@ $GLOBALS['TCA']['tx_seminars_seminars']['ctrl']['default_sortby'] = 'ORDER BY cr
 $GLOBALS['TCA']['tx_seminars_seminars']['columns']['title']['config']['type'] = 'text';
 $GLOBALS['TCA']['tx_seminars_seminars']['columns']['accreditation_number']['config']['type'] = 'text';
 $GLOBALS['TCA']['tx_seminars_seminars']['columns']['credit_points']['config']['size'] = 20;
+$GLOBALS['TCA']['tx_seminars_seminars']['columns']['target_groups']['label'] = 'Rubriken:';
 $GLOBALS['TCA']['tx_seminars_seminars']['types']['0']['showitem'] = '--div--;LLL:EXT:fcseminars/Resources/Private/Language/locallang_db.xlf:tx_seminars_seminars.tab.data1, begin_date, end_date,
 title;;;richtext[paste|bold|italic|formatblock|class|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image]:rte_transform[mode=ts_css],
 description;;;richtext[paste|bold|italic|formatblock|class|left|center|right|orderedlist|unorderedlist|outdent|indent|link|image]:rte_transform[mode=ts_css],
